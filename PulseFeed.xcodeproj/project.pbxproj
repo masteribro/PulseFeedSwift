@@ -29,9 +29,22 @@
 		8F6F76892F562B31008CB060 /* PulseFeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PulseFeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8F6F77C82F569594008CB060 /* Exceptions for "PulseFeed" folder in "PulseFeed" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8F6F766F2F562B30008CB060 /* PulseFeed */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8F6F76722F562B30008CB060 /* PulseFeed */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8F6F77C82F569594008CB060 /* Exceptions for "PulseFeed" folder in "PulseFeed" target */,
+			);
 			path = PulseFeed;
 			sourceTree = "<group>";
 		};
@@ -43,6 +56,31 @@
 		8F6F768C2F562B31008CB060 /* PulseFeedUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = PulseFeedUITests;
+			sourceTree = "<group>";
+		};
+		8F6F769E2F562B9E008CB060 /* Models */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8F6F76A52F562BF2008CB060 /* ViewModels */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8F6F76A92F562C27008CB060 /* Views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8F6F76BC2F562CA4008CB060 /* Services */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8F6F76C62F562CDE008CB060 /* Utilities */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +113,11 @@
 		8F6F76672F562B30008CB060 = {
 			isa = PBXGroup;
 			children = (
+				8F6F76C62F562CDE008CB060 /* Utilities */,
+				8F6F76BC2F562CA4008CB060 /* Services */,
+				8F6F76A92F562C27008CB060 /* Views */,
+				8F6F76A52F562BF2008CB060 /* ViewModels */,
+				8F6F769E2F562B9E008CB060 /* Models */,
 				8F6F76722F562B30008CB060 /* PulseFeed */,
 				8F6F76822F562B31008CB060 /* PulseFeedTests */,
 				8F6F768C2F562B31008CB060 /* PulseFeedUITests */,
@@ -109,6 +152,11 @@
 			);
 			fileSystemSynchronizedGroups = (
 				8F6F76722F562B30008CB060 /* PulseFeed */,
+				8F6F769E2F562B9E008CB060 /* Models */,
+				8F6F76A52F562BF2008CB060 /* ViewModels */,
+				8F6F76A92F562C27008CB060 /* Views */,
+				8F6F76BC2F562CA4008CB060 /* Services */,
+				8F6F76C62F562CDE008CB060 /* Utilities */,
 			);
 			name = PulseFeed;
 			packageProductDependencies = (
@@ -400,6 +448,7 @@
 				DEVELOPMENT_TEAM = 7MUZM7U7R6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PulseFeed/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -428,6 +477,7 @@
 				DEVELOPMENT_TEAM = 7MUZM7U7R6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PulseFeed/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

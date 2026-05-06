@@ -1,32 +1,24 @@
-//
-//  PulseFeedApp.swift
-//  PulseFeed
-//
-//  Created by Ibrahim Mohammed on 02/03/2026.
-//
-
 import SwiftUI
-import SwiftData
 
 @main
 struct PulseFeedApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
+    @StateObject private var homeViewModel = HomeViewModel()
+    
+    init() {
+        configureAppearance()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .environmentObject(homeViewModel)
+                .preferredColorScheme(.light)
         }
-        .modelContainer(sharedModelContainer)
+    }
+    
+    private func configureAppearance() {
+        UINavigationBar.appearance().backgroundColor = .white
+        UINavigationBar.appearance().tintColor = .black
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
     }
 }
