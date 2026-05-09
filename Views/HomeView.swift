@@ -22,6 +22,9 @@ struct HomeView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Color.white, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
+            .task {
+                await viewModel.fetchFeedItems()
+            }
         }
         .alert(isPresented: .constant(viewModel.state.error != nil)) {
             Alert(

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MediaType: String, CaseIterable {
+enum MediaType: String, CaseIterable, Decodable {
     case video
     case audio
     case document

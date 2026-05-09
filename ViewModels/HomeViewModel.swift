@@ -39,17 +39,31 @@ enum HomeState: Equatable {
 
 class HomeViewModel: ObservableObject {
     @Published private(set) var state: HomeState = .initial
-    @Published var feedItems: [FeedItem] = FeedItem.sampleItems
-    
+    @Published var feedItems: [FeedItem] = []
+
     private let audioService = AudioPlayerService()
     private let videoService = VideoPlayerService()
     private let documentService = DocumentService()
-    private let assetDocumentService = AssetDocumentService()  
-    
+    private let assetDocumentService = AssetDocumentService()
+    private let mediaDataService = MediaDataService()
+
     private var cancellables = Set<AnyCancellable>()
-    
+
     init() {
         setupSubscriptions()
+    }
+
+    func fetchFeedItems() async {
+        do {
+            let items = try await mediaDataService.fetchMediaData()
+            await MainActor.run {
+                self.feedItems = items
+            }
+        } catch {
+            await MainActor.run {
+                self.state = .error("Failed to load feed: \(error.localizedDescription)")
+            }
+        }
     }
     
     private func setupSubscriptions() {
